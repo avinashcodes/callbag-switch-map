@@ -1,0 +1,26 @@
+{
+  "name": "callbag-switch-map",
+  "version": "1.0.0",
+  "description": "A callbag operator that switches to latest listenable source result",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avinashcodes/callbag-switch-map.git"
+  },
+  "keywords": [
+    "callbag"
+  ],
+  "author": "Avinash Anupoju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avinashcodes/callbag-switch-map/issues"
+  },
+  "homepage": "https://github.com/avinashcodes/callbag-switch-map#readme",
+  "devDependencies": {
+    "callbag-from-promise": "^1.0.0",
+    "tape": "^4.9.0"
+  }
+}
