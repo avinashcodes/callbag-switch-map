@@ -18,10 +18,7 @@ const forEach = require('callbag-for-each');
 console.log('Pullable source');
 pipe(
   fromIter('hi'),
-  switchMap(char => pipe(
-    fromIter([10, 20, 30]),
-    map(num => char + num)
-  )),
+  switchMap(char => fromIter([10, 20, 30]), (char,num) => char + num),
   forEach(x => console.log(x))
 );
 
