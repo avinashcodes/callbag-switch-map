@@ -6,19 +6,14 @@ A callbag operator that creates and switches to the new source whenever original
 
 ## Usage:
 
-```js
-import pipe from 'callbag-pipe';
-import interval from 'callbag-interval';
-import take from 'callbag-take';
-import fromPromise from 'callbag-from-promise';
-import switchMap from 'callbag-switch-map';
-import fromIter from 'callbag-from-iterable';
-import forEach from 'callbag-for-each';
+Pullable Source
 
-const fakeAjax = value => new Promise(resolve, reject){
-	let period = value % 2 ? 400 : 1200; // Resolve odd numbers quickly
-	setTimeout(resolve, 1000, (value*value));
-});
+```js
+const pipe = require('callbag-pipe');
+const switchMap = require('callbag-switch-map');
+const fromIter = require('callbag-from-iterable');
+const forEach = require('callbag-for-each');
+
 
 console.log('Pullable source');
 pipe(
@@ -35,7 +30,20 @@ pipe(
 // i10
 // i20
 // i30
+```
 
+Listenable Source
+
+```js
+const pipe = require('callbag-pipe');
+const switchMap = require('callbag-switch-map');
+const interval = require('callbag-interval');
+const fromPromise = require('callbag-from-promise');
+
+const fakeAjax = value => new Promise(resolve, reject){
+	let period = value % 2 ? 400 : 1200; // Resolve odd numbers quickly
+	setTimeout(resolve, 1000, (value*value));
+});
 
 
 console.log('Listenable source');
@@ -53,6 +61,4 @@ pipe(
 // 81
 // 121
 // ....
-
-
 ```
