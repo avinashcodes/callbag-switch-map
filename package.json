@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/avinashcodes/callbag-switch-map#readme",
   "devDependencies": {
+    "callbag-from-iterable": "^1.0.0",
     "callbag-from-promise": "^1.0.0",
     "tape": "^4.9.0"
+  },
+  "dependencies": {
+    "callbag-basics": "^2.0.1"
   }
 }

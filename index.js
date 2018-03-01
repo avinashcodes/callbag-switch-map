@@ -18,6 +18,7 @@ const switchMap = (makeSource, combineResults) => inputSource => (start, outputS
 			currSource(0, (currT, currD) => {
 				if(currT === 0) currSourceTalkback = currD;
 				if(currT === 1) outputSink(t, combineResults(d, currD));
+				if(currT === 0 || currT === 1) currSourceTalkback(1);
 			});
 		} else {
 			if(t === 2){
