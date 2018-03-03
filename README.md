@@ -38,7 +38,7 @@ const interval = require('callbag-interval');
 const forEach = require('callbag-for-each');
 const fromPromise = require('callbag-from-promise');
 
-const fakeAjax = value => new Promise((resolve, reject) => up{
+const fakeAjax = value => new Promise((resolve, reject) => {
 	let period = value % 2 ? 400 : 1200; // Resolve odd numbers quickly
 	setTimeout(resolve, period, (value*value));
 });
