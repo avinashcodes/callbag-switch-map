@@ -35,11 +35,12 @@ Listenable Source
 const pipe = require('callbag-pipe');
 const switchMap = require('callbag-switch-map');
 const interval = require('callbag-interval');
+const forEach = require('callbag-for-each');
 const fromPromise = require('callbag-from-promise');
 
-const fakeAjax = value => new Promise(resolve, reject){
+const fakeAjax = value => new Promise((resolve, reject) => up{
 	let period = value % 2 ? 400 : 1200; // Resolve odd numbers quickly
-	setTimeout(resolve, 1000, (value*value));
+	setTimeout(resolve, period, (value*value));
 });
 
 
