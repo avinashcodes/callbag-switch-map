@@ -1,6 +1,6 @@
 {
   "name": "callbag-switch-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A callbag operator that switches to latest listenable source result",
   "main": "index.js",
   "scripts": {
