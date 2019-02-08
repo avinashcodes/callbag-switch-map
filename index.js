@@ -2,15 +2,16 @@ const switchMap = (makeSource, combineResults) => inputSource => (start, outputS
 	if(start !== 0) return;
 	if(!combineResults) combineResults = (x, y) => y;
 	let currSourceTalkback = null;
+	let sourceEnded = false;
 
 	inputSource(0, (t,d) => {
-		if(t === 0) outputSink(t, d); 
+		if(t === 0) outputSink(t, d);
 		if(t === 1){
 			if(currSourceTalkback){
 				currSourceTalkback(2);
 				currSourceTalkback = null;
 			}
-			
+
 			let currSource = makeSource(d);
 
 			currSource(0, (currT, currD) => {
@@ -22,12 +23,12 @@ const switchMap = (makeSource, combineResults) => inputSource => (start, outputS
 					if(sourceEnded) outputSink(currT, currD);
 				}
 			});
-		} 
+		}
 		if(t === 2){
 			sourceEnded = true;
 			if(!currSourceTalkback) outputSink(t, d);
 		}
-		
+
 	});
 }
 
