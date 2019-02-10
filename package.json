@@ -2,9 +2,11 @@
   "name": "callbag-switch-map",
   "version": "1.0.2",
   "description": "A callbag operator that switches to latest listenable source result",
-  "main": "index.js",
+  "main": "index.cjs.js",
+  "module": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "build": "rollup $npm_package_module -o $npm_package_main --f cjs"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,12 @@
   "devDependencies": {
     "callbag-from-iterable": "^1.0.0",
     "callbag-from-promise": "^1.0.0",
+    "rollup": "^1.1.2",
     "tape": "^4.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "callbag": "^1.2.0",
+    "callbag-flatten": "^1.4.0",
+    "callbag-map": "^1.1.0"
+  }
 }
